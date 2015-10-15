@@ -23,3 +23,41 @@
   font-size: 2em;
 }
 
+#bookListWrapper {
+  width: 100%;
+  padding: 20px;
+}
+
+#bookListWrapper input {
+  width: 50%;
+}
+
+#bookListWrapper .book {
+  border: 2px groove gray;
+  padding: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#bookListWrapper .book .book-details {
+  margin-left: 160px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
