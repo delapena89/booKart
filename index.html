@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <title>Welcome to BooKart</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/app.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script type="text/javascript" src='js/app.js'></script>
+<!-- 1. create file structure -->
+<!-- 2. get bootstrap and link css/app.css -->
+<!-- 3. get angular cdn and link js/app.js -->
+<!-- 4. build the header(this is on this page because it will be seen on very few of the SPA) -->
+
 </head>
 <body>
+
+  <div id='header-wrapper'>
+    <span class='logo pull-left'>BooKart</span>
+    <span class='tagline pull-left'>We have over {{1 + ' million'}} books</span>
+    <div class='nav-wrapper pull-right'>
+      <ul class="nav nav-pills">
+        <li><a href="#/books">Books</a></li>
+        <li><a href="#/kart">Kart</a></li>
+      </ul>
+    </div>
+  </div>
+
 
 </body>
 </html>
