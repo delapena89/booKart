@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
 // writing the header controller, this will be on every page
 myApp.controller('headerCtrl', function($scope) {
