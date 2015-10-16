@@ -1,0 +1,27 @@
+<div id='bookListWrapper' ng-controller='BookListCtrl'>
+  <form role='form'>
+    <div class='form-group'>
+      <input type='text' class='form-control' placeholder="Search here..."
+    </div>
+  </form>
+
+<div>
+  <ul class='list-unstyled'>
+    <li class='book' ng-repeat='book in books' style='background: url(imgs/adultery.jpeg) no-repeat'>
+      <div class='book-details clearfix'>
+        <h3>{{book.name}}</h3>
+        <p>{{book.price}}</p>
+        <ul>
+          <li>Rating: {{book.rating}}</li>
+          <li>Binding: {{book.binding}}</li>
+          <li>Publisher: {{book.publisher}}</li>
+          <li>Released: {{book.releaseDate}}</li>
+        </ul>
+        <p>{{book.details}}</p>
+        <button class='btn btn-info'>Add to Kart</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</div>

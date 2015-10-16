@@ -30,6 +30,7 @@
 
 #bookListWrapper input {
   width: 50%;
+  margin-bottom: 5px;
 }
 
 #bookListWrapper .book {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='bookstore'>
 <head>
   <title>Welcome to BooKart</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -14,9 +14,9 @@
 </head>
 <body>
 
-  <div id='header-wrapper'>
-    <span class='logo pull-left'>BooKart</span>
-    <span class='tagline pull-left'>We have over {{1 + ' million'}} books</span>
+  <div id='header-wrapper' ng-controller="headerCtrl">
+    <span class='logo pull-left'>{{details.title}}</span>
+    <span class='tagline pull-left'>{{details.tagline}}</span>
     <div class='nav-wrapper pull-right'>
       <ul class="nav nav-pills">
         <li><a href="#/books">Books</a></li>
@@ -25,29 +25,36 @@
     </div>
   </div>
 
-  <div id='bookListWrapper'>
+  <!-- <div ng-view class='container'></div> -->
+
+  <div id='bookListWrapper' ng-controller='BookListCtrl'>
     <form role='form'>
       <div class='form-group'>
         <input type='text' class='form-control' placeholder="Search here..."
       </div>
     </form>
-  </div>
+
+<div>
   <ul class='list-unstyled'>
-    <li class='book' style='background: url(imgs/adultery.jpeg) no-repeat'>
+    <li class='book' ng-repeat='book in books' style='background: url(imgs/{{book.imgUrl}}) no-repeat'>
       <div class='book-details clearfix'>
-        <h3>Adultery</h3>
-        <p>205</p>
+        <h3>{{book.name}}</h3>
+        <p>{{book.price}}</p>
         <ul>
-          <li>Rating: 4</li>
-          <li>Binding: Paperback</li>
-          <li>Publisher: Random House India</li>
-          <li>Released: 12-08-2014</li>
+          <li>Rating: {{book.rating}}</li>
+          <li>Binding: {{book.binding}}</li>
+          <li>Publisher: {{book.publisher}}</li>
+          <li>Released: {{book.releaseDate}}</li>
         </ul>
-        <p>"Linda, in her thirties, begins to question the routine and predictability of her days. In everybodys eyes, she has a perfect life-happy marriage, children and a career. Yet what she feels is an eno... <a href='#'>View More</a>"</p>
+        <p>{{book.details}}</p>
         <button class='btn btn-info'>Add to Kart</button>
       </div>
     </li>
   </ul>
+</div>
+
+</div>
+
 
 
 
