@@ -17,6 +17,7 @@
   font-family: monospace;
 }
 
+
 .nav-wrapper {
   margin-left: 100px;
   margin-top: 15px;
@@ -37,7 +38,7 @@
 
 #bookListWrapper .book {
   border: 2px groove gray;
-  padding: 20px;
+  padding: 5px;
   margin-bottom: 20px;
   position: relative;
 }
