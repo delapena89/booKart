@@ -15,17 +15,32 @@ myApp.config(function($routeProvider) {
     controller: 'BookListCtrl'
   })
   .when('/kart', {
-    templateUrl: 'partials/kart-list.html'
+    templateUrl: 'partials/kart-list.html',
+    controller: 'KartListCtrl'
   })
   .otherwise({
     redirectTo: '/books'
   });
 });
 
+myApp.factory('kartService', function() {
+  var kart = [];
 
+  return {
+    getKart: function() {
+      return kart;
+    },
+    addToKart: function(book) {
+      kart.push(book);
+    },
+    buy: function(book) {
+      alert('Thanks for buying ' + book.name);
+    }
+  };
+});
 
-myApp.controller('BookListCtrl', function($scope) {
-  $scope.books = [
+myApp.factory('bookService', function() {
+  var books = [
   {
     imgUrl: "adultery.jpeg",
       name: "Adultery",
@@ -85,10 +100,34 @@ myApp.controller('BookListCtrl', function($scope) {
       publisher: "Universities Press",
       releaseDate: "25-08-2000",
       details: "Wings of Fire traces the life and times of India's former president A.P.J. Abdul Kalam. It gives a glimpse of his childhood as well as his growth as India's Missile Man. Summary of the Book Wings... View More"
-    }];
+    }
+  ];
+  return {
+    getBooks: function() {
+      return books;
+    },
+    addToKart: function(book) {
+    }
+  };
+});
+
+
+myApp.controller('KartListCtrl', function($scope, kartService) {
+  $scope.kart = kartService.getKart();
+
+  $scope.buy = function(book) {
+    kartService.buy(book);
+  };
+});
+
+
+myApp.controller('BookListCtrl', function($scope, bookService, kartService) {
+  $scope.books = bookService.getBooks();
+
     $scope.addToKart = function(book) {
-      console.log('added to kart', book);
-    };
+      kartService.addToKart(book);
+};
+
 });
 
 
