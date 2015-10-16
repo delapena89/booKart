@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html ng-app='bookstore'>
+<html ng-app='myApp'>
 <head>
   <title>Welcome to BooKart</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/app.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
   <script type="text/javascript" src='js/app.js'></script>
 <!-- 1. create file structure -->
 <!-- 2. get bootstrap and link css/app.css -->
@@ -25,35 +26,9 @@
     </div>
   </div>
 
-  <!-- <div ng-view class='container'></div> -->
+  <div ng-view class='container'></div>
 
-  <div id='bookListWrapper' ng-controller='BookListCtrl'>
-    <form role='form'>
-      <div class='form-group'>
-        <input type='text' class='form-control' placeholder="Search here..."
-      </div>
-    </form>
 
-<div>
-  <ul class='list-unstyled'>
-    <li class='book' ng-repeat='book in books' style='background: url(imgs/{{book.imgUrl}}) no-repeat'>
-      <div class='book-details clearfix'>
-        <h3>{{book.name}}</h3>
-        <p>{{book.price}}</p>
-        <ul>
-          <li>Rating: {{book.rating}}</li>
-          <li>Binding: {{book.binding}}</li>
-          <li>Publisher: {{book.publisher}}</li>
-          <li>Released: {{book.releaseDate}}</li>
-        </ul>
-        <p>{{book.details}}</p>
-        <button class='btn btn-info'>Add to Kart</button>
-      </div>
-    </li>
-  </ul>
-</div>
-
-</div>
 
 
 

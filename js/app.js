@@ -1,4 +1,4 @@
-var myApp = angular.module('bookstore', []);
+var myApp = angular.module('myApp', ['ngRoute']);
 
 // writing the header controller, this will be on every page
 myApp.controller('headerCtrl', function($scope) {
@@ -6,6 +6,20 @@ myApp.controller('headerCtrl', function($scope) {
     title: "BooKart",
     tagline: "We have over 1 million books for you!"
   };
+});
+
+myApp.config(function($routeProvider) {
+  $routeProvider
+  .when('/books', {
+    templateUrl: 'partials/book-list.html',
+    controller: 'BookListCtrl'
+  })
+  .when('/kart', {
+    templateUrl: 'partials/kart-list.html'
+  })
+  .otherwise({
+    redirectTo: '/books'
+  });
 });
 
 
@@ -72,6 +86,9 @@ myApp.controller('BookListCtrl', function($scope) {
       releaseDate: "25-08-2000",
       details: "Wings of Fire traces the life and times of India's former president A.P.J. Abdul Kalam. It gives a glimpse of his childhood as well as his growth as India's Missile Man. Summary of the Book Wings... View More"
     }];
+    $scope.addToKart = function(book) {
+      console.log('added to kart', book);
+    };
 });
 
 

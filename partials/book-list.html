@@ -1,13 +1,13 @@
 <div id='bookListWrapper' ng-controller='BookListCtrl'>
-  <form role='form'>
-    <div class='form-group'>
-      <input type='text' class='form-control' placeholder="Search here..."
-    </div>
-  </form>
+    <form role='form'>
+      <div class='form-group'>
+        <input ng-model="anything" type='text' class='form-control' placeholder="Search here..."
+      </div>
+    </form>
 
 <div>
   <ul class='list-unstyled'>
-    <li class='book' ng-repeat='book in books' style='background: url(imgs/adultery.jpeg) no-repeat'>
+    <li class='book' ng-repeat='book in books | filter:anything' style='background: url(imgs/{{book.imgUrl}}) no-repeat'>
       <div class='book-details clearfix'>
         <h3>{{book.name}}</h3>
         <p>{{book.price}}</p>
@@ -18,7 +18,7 @@
           <li>Released: {{book.releaseDate}}</li>
         </ul>
         <p>{{book.details}}</p>
-        <button class='btn btn-info'>Add to Kart</button>
+        <button class='btn btn-info pull-right' ng-click=addToKart(book)>Add to Kart</button>
       </div>
     </li>
   </ul>
